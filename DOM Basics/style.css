@@ -354,7 +354,7 @@ nav {
     border-bottom-right-radius:3px ;
 }
 footer{
-    padding: 40px ;
+    padding: 30px ;
     gap: 10px;
     display: flex;
     justify-content: center;
@@ -376,4 +376,22 @@ footer{
 .footermidnight{
     background-color: rgb(89, 0, 184);
     color: rgb(255, 255, 255);
+}
+.linkedin, .github{
+    width: 30px;
+    height: auto;
+    margin: 5px;
+}
+.logos{
+    border: #8484a3 solid 2px;
+    height: 42px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.1s;
+}
+
+.logos:hover{
+    background-color: #000000;
+    box-shadow: #000000 2px 2px 20px 1px;
+    border-color: #000000;
 }

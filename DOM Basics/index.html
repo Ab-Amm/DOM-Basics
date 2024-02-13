@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Basics</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav id="nav">
+        <div class="bold-welcome">
+            <span class="js">JS</span> <u>DOM</u> Basics
+        </div>
+        <div  class="bold-welcome">
+            <p><b class="bold-welcome">Hey There,</b> 
+                <span id="welcome-message">
+                <input type="text" placeholder="Input Your Name"  id="welcome-message1">
+                <button class="button" id="ok_btn">Ok</button>
+                </span>
+            </p>
+        </div>
+        <div class="dropdown-menu">
+            <select id="task-dropdown">
+                <option value="">Select a Task</option>
+                <option value="show-input">Show Input</option>
+                <option value="add-elements">Add/Remove Elements</option>
+                <option value="pick-a-theme">Pick a Theme</option>
+                <option value="show-pass">Show/Hide Password</option>
+                <option value="custom-welcome">Custom Welcome</option>
+                <option value="check-all-none">Check All/None</option>
+                <option value="dice-roll">Dice Roll</option>
+                <option value="layers">Submit Comment</option>
+                <option value="mock-authentication">Mock Authentication</option>
+            </select>
+        </div>
+    </nav>
+
+
+    <div class="container" id="show-input">
+        <h3>Show Input</h3>
+        <input type="text" id="tbox">
+        <button class="button" id="btn">get value</button>
+        <p id="show">?</p>
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This code listens for user input in a textbox and updates the content of an element with the id 'show' (initially a "?") either when the user presses Enter or clicks a button, displaying the input text.
+        </div>
+    </div>
+
+    <div class="container" id="add-elements">
+    <div id="addremovecontainer">
+        <div>
+            <h3>Add Elements</h3>
+            <input type="text" id="tbox2">
+            <button class="button" id="btn2">Add</button>
+            </div><div>
+            <h3>Remove Elements</h3>
+            <input type="text" id="tbox3">
+            <button class="button" id="btnn">Remove</button>
+            </div>
+    </div>
+
+        
+        <ul id="todo" class="todo">
+            <li>task 1</li>
+            <li>task 2</li>
+            <li>task 3</li>
+        </ul>
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            When id = `btn2` is clicked, it retrieves the value from `textbox2` and creates a new list item (`li`) with that value, then appends it to the ul (id `todo`),
+            but for id = `btnn`, it retrieves the value from `textbox3`, then iterates through all list items (`li`) and removes the one with text content matching that value. 
+        </div>
+    </div>
+
+    <div class="container" id="pick-a-theme">
+        <label for="theme" class="label" ><b>Pick a theme</b></label>
+        <select id="theme">
+            <option value="1">Light</option>
+            <option value="2">Midnight</option>
+            <option value="3">Dark</option>
+            <option value="4">Dim</option>
+        </select>
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This code listens for changes on the theme select element (select tag with themes as options). When a change occurs, it iterates over all buttons, containers, and the navbar, changing their style, thus changing the entire webpage's theme</div>
+    </div>
+
+    <div class="container" id="show-pass">
+        <h3>Show/Hide Password</h3>
+        <label for="pass">
+            <input type="password" name="pass" id="pass" placeholder="Password">
+        </label>
+        <label for="check1">
+            <input type="checkbox" name="check1" id="check1"> Show
+        </label>
+    
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This one toggles the visibility of the password input field when a checkbox is clicked.
+            If the checkbox is checked, it changes the input type to "text" (with setAttribute) to display the password in plain text.
+            Otherwise, it sets the input type back to "password" to hide the password characters.        </div>
+    </div>
+
+    <div class="container" id="custom-welcome">
+        <h3>Custom Welcome</h3>
+        <div class="login_container">
+            <p>Input Examples</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>first</td>
+                        <td>first123</td>
+                    </tr>
+                    <tr>
+                        <td>second</td>
+                        <td>second123</td>
+                    </tr>
+                    <tr>
+                        <td>third</td>
+                        <td>third123</td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="text" placeholder="Username" id="usern" autocomplete="off">
+            <input type="password" placeholder="Password" id="passw">
+            <button id="login_button" class="button">Login</button>
+        </div>
+        <div class="welcome">
+            <p id="wlcm_msg"></p>
+            <button class="button" id="back">Go back</button>
+        </div>
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This code manages user authentication. 
+            When the login button is clicked, it checks if the entered username and password match any predefined users.
+            If a match is found, it displays a welcome message and hides the login container. 
+            When the "Go back" button is clicked, it reverses these actions.        </div>
+    </div>
+
+    <div class="container" id="check-all-none">
+        <h3>Check All/None, Submit</h3>
+        <h4>Favorite Sports?</h4>
+        <div class="sports">
+            <input type="checkbox" id="rugby" value="rugby" class="sport">
+            <label for="rugby">rugby</label>
+            
+            <input type="checkbox" id="soccer" value="soccer" class="sport">
+            <label for="soccer">soccer</label>
+            
+            <input type="checkbox" id="swimming" value="swimming" class="sport">
+            <label for="swimming">swimming</label>
+            
+            <input type="checkbox" id="basketball" value="basketball" class="sport">
+            <label for="basketball">basketball</label>
+            
+            <input type="checkbox" id="tennis" value="tennis" class="sport">
+            <label for="tennis">tennis</label>
+        </div>
+        <br>
+        <div class="can_buttons">
+            <button class="button" id="check_all">check all</button>
+            <button class="button" id="uncheck_all">uncheck all</button>
+            <button class="button" id="submit">submit </button>    
+        </div>
+        
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This JavaScript code manages checkboxes for sports selection, allowing users to check all, uncheck all, and submit their selected sports, displaying the chosen sports in an alert message.
+            Note that the checkboxes are not default style, refer to the style.css file for the details.        </div>
+    </div>
+
+    <div class="container" id="dice-roll">
+        <h3>Roll The Dice</h3>
+        <div class="dice">
+            <img src="pictures/dice2.png" alt="" id="dice_image"> <br>
+            <button class="button" id="throw">Throw until a 6</button>    
+        </div>
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This code simulates rolling a dice when a button is clicked. It generates a random number between 1 and 6,
+            updates the image source accordingly, and removes the event listener from the button when a 6 is rolled to prevent further clicks.
+            The fact that we named the image files accordingly is actually the main reason this code logic works lol.        </div>
+    </div>
+
+    <div class="container container2" id="layers">
+        <h3>Submit Comment</h3>
+        <div class="layer1">
+            <h3>What do you think so far?</h3>
+            <input type="text" id="comment" autocomplete="off">
+            <button class="button" id="submit1">Submit</button>
+        </div>
+        <div class="layer2">
+            <h3>Well, Here's What you wrote:)</h3>
+            <p id="show_comment"></p>
+        </div>
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This JavaScript code listens for a click event on the "Submit" button (`btn4`). 
+            When clicked, it retrieves the value entered in the comment input field, 
+            hides the first layer (`layer1`), displays the second layer (`layer2`), 
+            and sets the text content of an element in the second layer to the entered comment.
+
+        </div>
+    </div>
+
+    <div class="container" id="mock-authentication">
+        <h3>Mock Authentication</h3>
+        <h6><i> <hr>Try something random at first, <br> Then try username: Abderrahmane - password: abc123 <hr> </i></h6>
+        
+        <form action="form_script.html" method="get">
+            <input type="text" placeholder="Username" id="username" autocomplete="off">
+            <input type="password" placeholder="Password" id="password">
+            <input type="submit" value="Login" id="btn_submit" class="button">
+        </form>
+        <span class="tooltip">i</span>
+        <div class="tooltip-card">
+            This JavaScript code listens for a click event on the submit button (`btn_submit`) of a login form. 
+            When clicked, it prevents the default form submission behavior, 
+            checks if the entered username and password match predefined values, 
+            and either submits the form and takes you to the next page, or displays an error message.
+        </div>
+    </div>
+
+    <footer id="footer">
+        
+            <p>Made by Abderrahmane Ammara. </p>
+        <div class="logos">
+            <a href="https://www.linkedin.com/in/abderrahmane-ammara/" target="_blank"><img src="pictures/li-logo64.png" alt="" class="linkedin"></a>
+            <a href="https://github.com/Ab-Amm" target="_blank"><img src="pictures/github.png" alt="" class="github"></a>
+        </div>
+    </footer>
+    
+
+
+</body>
+</html>
